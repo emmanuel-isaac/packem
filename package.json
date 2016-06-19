@@ -1,0 +1,19 @@
+{
+  "name": "packem",
+  "version": "1.0.0",
+  "description": "",
+  "main": "manage.py",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andela-eisaac/packem.git"
+  },
+  "author": "Emmanuel Isaac",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andela-eisaac/packem/issues"
+  },
+  "homepage": "https://github.com/andela-eisaac/packem#readme"
+}

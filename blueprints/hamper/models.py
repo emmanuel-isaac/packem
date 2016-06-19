@@ -31,3 +31,6 @@ class ItemHamper(models.Model):
     item = models.ForeignKey(Item, null=True)
     hamper = models.ForeignKey(Hamper, null=True)
     item_quantity = models.IntegerField(null=True)
+
+    class Meta:
+        unique_together = ('item', 'hamper')
