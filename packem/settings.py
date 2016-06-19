@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blueprints.hamper',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -90,7 +91,10 @@ DATABASES = {
         'USER': envvars.get("PGUSER"),
         'PASSWORD': envvars.get("PGPASSWORD"),
         'HOST': 'localhost',
-        'PORT': '5432'
+        'PORT': '5432',
+        'TEST': {
+            'NAME': 'test_packem',
+        }
     }
 }
 
