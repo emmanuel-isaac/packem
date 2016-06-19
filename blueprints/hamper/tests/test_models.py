@@ -32,7 +32,7 @@ class HamperTestCase(TestCase):
     def test_hamper_creation(self):
         hamper = models.Hamper.objects.get(name='Valentine special')
         self.assertTrue(isinstance(hamper, models.Hamper))
-        self.assertTrue(hamper.__str__(), 'Valentine special')
+        self.assertEqual(hamper.__str__(), 'Valentine special')
 
 
 class ItemHamperLineTestCase(TestCase):
