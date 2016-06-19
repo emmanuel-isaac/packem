@@ -9,7 +9,7 @@ class UserTestCase(TestCase):
                                                last_name='bar', password='fooBar')
 
     def test_user_creation(self):
-        self.assertTrue(self.user, models.User)
+        self.assertTrue(isinstance(self.user, models.User))
 
     def test_password_is_encrypted(self):
         self.assertNotEqual(self.user.password, 'fooBar')
