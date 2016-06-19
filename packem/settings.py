@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blueprints.hamper',
     'blueprints.user',
+    'blueprints.cart',
 ]
 
 MIDDLEWARE_CLASSES = [

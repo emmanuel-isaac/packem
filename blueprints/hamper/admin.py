@@ -12,6 +12,7 @@ class CategoryAdmin(admin.ModelAdmin):
 class HamperAdmin(admin.ModelAdmin):
     date_hierarchy = 'created'
     fields = ('name', 'description',)
+    list_display = ('name', 'description',)
 
 
 @admin.register(Item)
