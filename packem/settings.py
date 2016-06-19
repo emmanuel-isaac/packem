@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blueprints.hamper',
-    'blueprints.packem_user',
+    'blueprints.user',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -138,4 +138,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-AUTH_USER_MODEL = 'packem_user.User'
+AUTH_USER_MODEL = 'user.User'

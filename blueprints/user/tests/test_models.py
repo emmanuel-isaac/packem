@@ -1,9 +1,9 @@
 from django.test import TestCase
 
-from blueprints.packem_user import models
+from blueprints.user import models
 
 
-class PackemUserTestCase(TestCase):
+class UserTestCase(TestCase):
     def setUp(self):
         self.user = models.User.objects.create(email='foo@bar.com', first_name='foo',
                                                last_name='bar', password='fooBar')
