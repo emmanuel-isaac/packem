@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'blueprints.hamper',
     'blueprints.user',
     'blueprints.cart',
+    'rest_framework',
 ]
 
 MIDDLEWARE_CLASSES = [

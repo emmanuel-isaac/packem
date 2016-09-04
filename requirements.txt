@@ -1,4 +1,7 @@
 coverage==4.1
-Django==1.9.7
+Django==1.10.1
+django-filter==0.14.0
+djangorestframework==3.4.6
 envvars==0.3.0
+Markdown==2.6.6
 psycopg2==2.6.1
