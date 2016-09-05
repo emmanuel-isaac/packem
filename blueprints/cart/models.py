@@ -1,5 +1,3 @@
-from __future__ import unicode_literals
-
 from django.db import models
 
 from blueprints.hamper.models import Hamper, Item
@@ -12,6 +10,9 @@ class Cart(models.Model):
     paid_for = models.BooleanField(default=False)
     user = models.ForeignKey(User)
     created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return "{}'s cart, created {}".format(self.user.username, self.created)
 
 
 class CartItemLine(models.Model):
