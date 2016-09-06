@@ -17,6 +17,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 from rest_framework import routers
+from rest_framework.urlpatterns import format_suffix_patterns
 
 from blueprints.user import views as user_views
 from blueprints.cart import views as cart_views
@@ -24,12 +25,15 @@ from blueprints import api_root
 
 router = routers.DefaultRouter()
 
-urlpatterns = [
+urlpatterns = format_suffix_patterns([
     url(r'^api/$', api_root),
-    url(r'^api/auth/', include('rest_framework.urls')),
     url(r'^api/users/$', user_views.UserList.as_view(), name='user-list'),
     url(r'^api/carts/$', cart_views.CartList.as_view(), name='cart-list'),
     url(r'^api/users/(?P<pk>[0-9]+)/$', user_views.UserDetail.as_view()),
     url(r'^api/carts/(?P<pk>[0-9]+)/$', cart_views.CartDetail.as_view(), name='cart-detail'),
+])
+
+urlpatterns += [
+    url(r'^api/auth/', include('rest_framework.urls')),
     url(r'^admin/', admin.site.urls),
 ]
