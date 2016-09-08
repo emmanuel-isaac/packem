@@ -13,3 +13,6 @@ class UserTestCase(TestCase):
 
     def test_password_is_encrypted(self):
         self.assertNotEqual(self.user.password, 'fooBar')
+
+    def test_user_creation_creates_cart_instance(self):
+        self.assertTrue(self.user.cart_set.count(), 1)

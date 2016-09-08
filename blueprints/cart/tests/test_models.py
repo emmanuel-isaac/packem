@@ -15,7 +15,7 @@ class CartTestCase(TestCase):
         self.cart = Cart.objects.create(user=self.user,)
 
     def test_creation(self):
-        self.cart = Cart.objects.get(user=self.user)
+        self.cart = Cart.objects.last()
         self.assertTrue(isinstance(self.cart, Cart))
 
     def test_add_item_to_cart(self):
