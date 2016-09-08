@@ -5,7 +5,7 @@ from rest_framework import generics
 
 from .models import User
 from .serializers import UserSerializer
-from .permissions import IsOwnerOrReadOnly
+from .permissions import IsOwnerOrAdminOrReadOnly
 
 
 class UserList(generics.ListCreateAPIView):
@@ -20,4 +20,4 @@ class UserList(generics.ListCreateAPIView):
 class UserDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = (permissions.IsAdminUser, IsOwnerOrReadOnly)
+    permission_classes = (IsOwnerOrAdminOrReadOnly,)
