@@ -11,3 +11,8 @@ class UserManager(models.UserManager):
 
 class User(models.AbstractUser):
     objects = UserManager()
+
+    def save(self, *args, **kwargs):
+        super(User, self).save(*args, **kwargs)
+        if not self.cart_set.all().count():
+            return self.cart_set.create()
