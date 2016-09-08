@@ -18,6 +18,7 @@ from django.contrib import admin
 
 from rest_framework import routers
 from rest_framework.urlpatterns import format_suffix_patterns
+from rest_framework.authtoken import views as auth_views
 
 from blueprints.user import views as user_views
 from blueprints.cart import views as cart_views
@@ -36,4 +37,5 @@ urlpatterns = format_suffix_patterns([
 urlpatterns += [
     url(r'^api/auth/', include('rest_framework.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^api-token-auth/', auth_views.obtain_auth_token),
 ]
