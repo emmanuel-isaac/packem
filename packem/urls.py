@@ -23,8 +23,11 @@ from rest_framework.authtoken import views as auth_views
 from blueprints.user import views as user_views
 from blueprints.cart import views as cart_views
 from blueprints import api_root
+from .settings import ADMIN_SITE_HEADER
 
 router = routers.DefaultRouter()
+
+admin.site.site_header = ADMIN_SITE_HEADER
 
 urlpatterns = format_suffix_patterns([
     url(r'^api/$', api_root),

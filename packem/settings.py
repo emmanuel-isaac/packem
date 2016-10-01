@@ -151,3 +151,5 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ),
 }
+
+ADMIN_SITE_HEADER = 'Packem Administration'

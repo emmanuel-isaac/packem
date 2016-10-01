@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 
 from django.contrib.auth import models
+from rest_framework.authtoken.models import Token
 
 
 class UserManager(models.UserManager):
@@ -13,6 +14,8 @@ class User(models.AbstractUser):
     objects = UserManager()
 
     def save(self, *args, **kwargs):
-        super(User, self).save(*args, **kwargs)
+        super().save(*args, **kwargs)
         if not self.cart_set.all().count():
-            return self.cart_set.create()
+            self.cart_set.create()
+        if not Token.objects.filter(user=self):
+            Token.objects.create(user=self)

@@ -1,4 +1,5 @@
 from django.test import TestCase
+from rest_framework.authtoken.models import Token
 
 from blueprints.user import models
 
@@ -16,3 +17,6 @@ class UserTestCase(TestCase):
 
     def test_user_creation_creates_cart_instance(self):
         self.assertTrue(self.user.cart_set.count(), 1)
+
+    def test_user_creation_creates_token_instance(self):
+        self.assertTrue(Token.objects.count(), 1)
